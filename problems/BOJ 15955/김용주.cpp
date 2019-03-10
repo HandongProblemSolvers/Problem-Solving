@@ -24,7 +24,7 @@ struct coord{
 	}
 };
 
-int N, Q, parent[MAX_N], r[MAX_N], ans[MAX_N];
+int N, Q, parent[MAX_N], ans[MAX_N];
 query qry[MAX_N];
 coord xSort[MAX_N], ySort[MAX_N];
 priority_queue < pair<int, P>, vector<pair<int, P>>, greater<pair<int, P>>> pq;
@@ -35,19 +35,17 @@ int find(int n){
 	return parent[n];
 }
 
-//아직 제대로 모르겠어서 내일 다시 확인할 예정인 부분. 하람이형의 풀이를 참조했음.
 void merge(int a, int b){
 	a = find(a);
 	b = find(b);
 	if(a == b) return;
-	if(parent[a] < parent[b]) parent[a] += parent[b];
-	else parent[b] += parent[a];
-	// if(r[a] < r[b]) parent[a] = b;
-	// else if(r[a] > r[b]) parent[b] = a;
-	// else{
-	// 	parent[a] = b;
-	// 	r[b]++;
-	// }
+	//둘의 부모가 같을 경우 or 둘 다 root
+	if(parent[a] == parent[b]) parent[b] = a;
+	//집합의 크기를 자식에게 계속 넘겨줌.
+	else{
+		parent[a] += parent[b];
+		parent[b] = a;
+	}
 	return;
 }
 
@@ -68,7 +66,6 @@ int main(){
 		scanf("%d %d", &a, &b);
 		xSort[i] = {a, b, i};
 		ySort[i] = {a, b, i};
-		r[i] = 1;
 	}
 
 	for(int i = 1; i <= Q; i++){
@@ -77,10 +74,12 @@ int main(){
 		qry[i] = {hp, a, b, i};
 	}
 
+	//x좌표 기준과 y좌표 기준, hp기준으로 각각 sort
 	sort(xSort+1, xSort+N+1, cmpX);
 	sort(ySort+1, ySort+N+1, cmpY);
 	sort(qry+1, qry+Q+1);
 
+	//pq에 비용과 노드 번호를 push
 	for(int i = 1; i < N; i++){
 		int a = xSort[i].idx;
 		int b = xSort[i+1].idx;
@@ -103,14 +102,17 @@ int main(){
 		// printf("%d %d %d\n", a, b, c);
 		while(!pq.empty()){
 			int cur = pq.top().first;
-			// printf("%d\n", cur);
-			printf("%d %d\n", pq.top().second.first, pq.top().second.second);
+			//비용이 c보다 크면 안됨
 			if (cur > c) break;
+			//두 정점을 union-find
 			merge(pq.top().second.first, pq.top().second.second);
 			pq.pop();
 			// printf("%d\n", cur);
 		}
-		ans[qry[i].idx] = (find(a-1) == find(b-1));
+		/*
+		두 정점이 유니온파인드를 통해 이어졌는지 확인. 비용이 c이하인 애들을 확인.
+		sorting을 한 순서대로 확인하고 정답은 질문한 순서대로 출력해야해서 index를 저장했었음. */
+		ans[qry[i].idx] = (find(a) == find(b));
 	}
 
 	for(int i = 1; i <= Q; i++){
