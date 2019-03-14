@@ -29,8 +29,11 @@ public class Main{
 					
 			}
 			count=num;
-
+			//다음칸으로 전진하는 모습 보고싶으면..
+			//show();
 		}
+	//결과 모양
+	//show();
         System.out.println(L[N][M]);
 
 	}	
@@ -58,6 +61,16 @@ public class Main{
 			count++;
 		}	
 		return count++;
+	}
+	
+        static void show(){
+                for(int i=1; i<N+1; i++){
+                        for(int j=1; j<M+1; j++){
+                                System.out.print(L[i][j]+ " ");
+                        }
+                        System.out.println("");
+                }
+                System.out.println("");
 	}
   
 }
