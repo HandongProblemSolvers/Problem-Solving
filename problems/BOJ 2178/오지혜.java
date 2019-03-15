@@ -69,7 +69,7 @@ public class Main{
 			//set position to move
 			Direction a = queue.poll();
 			
-			//check possible direction(ก้,ก่,กๆ,ก็)
+			//check possible direction
 			for (int k=0; k<4; k++) {
 				
 				nearX = a.x + mx[k];
