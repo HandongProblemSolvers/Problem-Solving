@@ -14,13 +14,16 @@ int main() {
 	scanf("%d", &N);
 	for (int i = 0; i < N; i++)
 		scanf("%d", &arr[i]);
-	//처음 input이 1이상일 수도 있음. 그럴 경우는 없으니 0.
-	prv[0] = arr[0] <= 0 ? 1 : 0;
+	if(arr[0] > 0 || arr[N-1] > 0){
+		printf("0");
+		return 0;
+	}
+	prv[0] = 1;
 	//prv가 이전 열, dp가 현재 열.
     for (int i = 1; i < N; i++) {
 		memset(dp, 0, sizeof(dp));
 		if (arr[i] == -1) {
-			for (int j = 0; j < N / 2; j++) {
+			for (int j = 0; j < (N + 1) / 2; j++) {
 				if (j == 0) dp[j] = (prv[0] + prv[1]) % MOD;
 				else dp[j] = (prv[j - 1] + prv[j] + prv[j + 1]) % MOD;
 			}
