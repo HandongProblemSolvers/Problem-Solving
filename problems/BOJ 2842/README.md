@@ -10,6 +10,6 @@
 
 |              | 홍성은 | 백하현 | 오지혜 | 김기철 | 윤가영 |
 | ------------ | ------ | ------ | ------ | ------ | ------------ |
-| **코드**     ||| :x: |        | :x: |
-| **Write-up** ||| :white_check_mark: |        | :white_check_mark: |
+| **코드**     ||:x:| :x: |        | :x: |
+| **Write-up** ||:white_check_mark:| :white_check_mark: |        | :white_check_mark: |
 
