@@ -15,4 +15,4 @@
 * [박하윤](https://www.acmicpc.net/status?user_id=gkahsdl)    [강동인](https://www.acmicpc.net/status?user_id=dongin) 
 
 # :x:경고 대상:x:
-홍성은, 윤가영, 강동인 
+윤가영, 송민석, 김기철 
