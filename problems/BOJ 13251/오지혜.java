@@ -30,7 +30,7 @@ public class Ball {
 				n--;
 			}
 			ans+=result;
-			result=1;
+			result=1.0;
 		}
 		
 		System.out.println(ans);
