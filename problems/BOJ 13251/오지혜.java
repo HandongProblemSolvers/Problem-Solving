@@ -8,7 +8,7 @@ public class Ball {
 		
 		int M = sc.nextInt();
 		int N=0;
-		double result=1;
+		double result=1.0;
 		double ans = 0.0;
 		
 		int[] box = new int[M];
