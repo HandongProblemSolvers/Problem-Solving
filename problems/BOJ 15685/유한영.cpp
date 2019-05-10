@@ -6,17 +6,6 @@
 using namespace std;
 int direction[4][2] ={{1,0},{0,-1},{-1,0},{0,1}};
 int check[101][101]={0,};
-
-/*void print(){
-    cout<<endl;
-    for(int i=0;i<6;i++){
-        for(int j=0;j<6;j++){
-            cout<<check[i][j]<<' ';
-        }
-        cout<<endl;
-    }
-}
- */
 //  0 1 x = y
 // -1 0 y = -x
 void draw_point(vector<pair<int, int>> dots,int n,int status){
@@ -29,7 +18,6 @@ void draw_point(vector<pair<int, int>> dots,int n,int status){
         check[tmp.first][tmp.second]=1;
         dots.push_back(tmp);
     }
-    //print();
     draw_point(dots, n-1,(status+1)%4);
 }
 int main(int argc, const char * argv[]) {
