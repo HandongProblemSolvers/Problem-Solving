@@ -138,26 +138,23 @@ bool bfs(int sx, int sy) {
 	visited[sx][sy] = true;
 	q.push({sx,sy});
 	while (!q.empty()) {
-		int qSize = q.size();
-		while (qSize--) {
-			int x = q.front().first;
-			int y = q.front().second;
-			size++;
-			int count = 0;
-			for (int d=0; d<4; d++) {
-				int nx = x + dir[d][0];
-				int ny = y + dir[d][1];
-				if (board[nx][ny]) count++;
-			}
-			num[count]++;
-			for (int d=0; d<4; d++) {
-				int nx = x + dir[d][0];
-				int ny = y + dir[d][1];
-				if (board[nx][ny]) continue;
-				if (visited[nx][ny]) continue;
-				visited[nx][ny]=true;
-				q.push({nx, ny});
-			}
+		int x = q.front().first;
+		int y = q.front().second;
+		size++;
+		int count = 0;
+		for (int d=0; d<4; d++) {
+			int nx = x + dir[d][0];
+			int ny = y + dir[d][1];
+			if (board[nx][ny]) count++;
+		}
+		num[count]++;
+		for (int d=0; d<4; d++) {
+			int nx = x + dir[d][0];
+			int ny = y + dir[d][1];
+			if (board[nx][ny]) continue;
+			if (visited[nx][ny]) continue;
+			visited[nx][ny]=true;
+			q.push({nx, ny});
 		}
 	}
 	if (size == 1) return true;
