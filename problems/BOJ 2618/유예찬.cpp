@@ -9,7 +9,7 @@ int N, W;
 ll dp[MAX_W][MAX_W];
 pair<int,int> issue[MAX_W];
 
-inline static int getDist(const pair<int,int> &a, const pair<int,int> &b) {
+inline int getDist(const pair<int,int> &a, const pair<int,int> &b) {
 	return abs(a.first - b.first) + abs(a.second - b.second);
 }
 
