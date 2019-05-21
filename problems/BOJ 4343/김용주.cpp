@@ -1,4 +1,4 @@
-//BOJ 4343 - Arctic Network
+//BOJ4343 - Arctic Network
 #include <cstdio>
 #include <algorithm>
 #include <cstring>
@@ -45,10 +45,9 @@ int main(){
         memset(parent, -1, sizeof(parent));
         memset(t, 0, sizeof(t));
         scanf("%d %d", &S, &P);
-        for(int i = 0; i < P; i++){
+        for(int i = 0; i < P; i++)
             scanf("%d %d", &pos[i].first, &pos[i].second);
-        }
-
+        
         int cnt = 0;
         for(int i = 0; i < P; i++){
             for(int j = i+1; j < P; j++){
@@ -58,19 +57,14 @@ int main(){
                 cnt++;
             }
         }
-
         sort(t, t+cnt, cmp);
 
-        for(int i = 0; i < cnt; i++){
-            if(merge(t[i].p1, t[i].p2)){
+        for(int i = 0; i < cnt; i++)
+            if(merge(t[i].p1, t[i].p2))
                 ans.push_back(t[i].d);
-            }
-        }
-
+                    
         int loc = ans.size();
         printf("%.2f\n", ans[loc-S]);
-
-        ans.clear();
     }
     return 0;
 }
