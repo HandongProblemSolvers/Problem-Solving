@@ -6,7 +6,7 @@
 char** malloc2DC(int row, int col);
 void free2DC(char **arr, int row);
 int** malloc2DI(int row, int col);
-void free2DI(int** arr, int row);
+void free2DI(int **arr, int row);
 int triplet(char **grid, int n);
 
 int main()
