@@ -17,7 +17,7 @@ int main(){
 			b2[cnt] = map[i][3] + map[j][4];
 		}
 	sort(b1 + 1, b1 + n * n + 1); sort(b2 + 1, b2 + n * n + 1); 
-    b1[0] = M; b2[0] = M;
+    	b1[0] = M; b2[0] = M;
 	b1[n*n+1] = M; b2[n*n+1] = M;
 	s = 1; e = n * n;
 	cnt = 0;
