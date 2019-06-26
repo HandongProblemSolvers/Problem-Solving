@@ -15,4 +15,4 @@
 * [박하윤](https://www.acmicpc.net/status?user_id=gkahsdl)    [강동인](https://www.acmicpc.net/status?user_id=dongin) 
 
 # :x:경고 대상:x:
-김기철, 김용주, 박하윤, 강동인, 지승윤 
+지승윤, 백하현 
