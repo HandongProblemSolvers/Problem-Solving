@@ -15,4 +15,4 @@
 * [박하윤](https://www.acmicpc.net/status?user_id=gkahsdl)    [강동인](https://www.acmicpc.net/status?user_id=dongin) 
 
 # :x:경고 대상:x:
-오지혜 
+오지혜(1), 김용주 
