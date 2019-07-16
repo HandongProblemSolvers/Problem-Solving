@@ -5,5 +5,5 @@
 
 |              | 유예찬 | 유한영 | 강동인 | 오지혜 |
 | ------------ | ------ | ------ | ------ | ------ |
-| **코드**     | :white_check_mark: |        |        |        |
-| **Write-up** | :white_check_mark: |        |        |        |
+| **코드**     | :white_check_mark: |:white_check_mark:|        |        |
+| **Write-up** | :white_check_mark: |:white_check_mark:|        |        |
