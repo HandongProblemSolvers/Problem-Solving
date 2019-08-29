@@ -9,7 +9,7 @@ using namespace std;
 typedef pair<int,int> P;
 
 const int MAX_N=11;
-const int dir[6][2] = {{0,-1},{1,-1},{0,1},{1,1}, {-1, -1}, {-1, 1}};
+const int dir[6][2] = {{0,-1},{1,-1},{0,1},{1,1},{-1,-1},{-1,1}};
 
 int T, N, M, noSeat;
 P aMatch[MAX_N][MAX_N], bMatch[MAX_N][MAX_N];
@@ -17,7 +17,8 @@ bool visited[MAX_N][MAX_N];
 char board[MAX_N][MAX_N];
 vector<P> adj[MAX_N][MAX_N];
 
-bool dfs(P here) {
+bool dfs(P here)
+{
 	int x = here.first, y = here.second;
 	if (visited[x][y]) return false;
 
